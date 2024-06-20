@@ -253,6 +253,10 @@ button {
   bottom: 0px
 }
 
+.bottom-20 {
+  bottom: 5rem
+}
+
 .bottom-\[10\%\] {
   bottom: 10%
 }
@@ -267,6 +271,10 @@ button {
 
 .left-0 {
   left: 0px
+}
+
+.left-1\/2 {
+  left: 50%
 }
 
 .left-\[0px\] {
@@ -301,8 +309,16 @@ button {
   right: 0px
 }
 
+.right-1\/2 {
+  right: 50%
+}
+
 .right-\[-15\.7px\] {
   right: -15.7px
+}
+
+.top-20 {
+  top: 5rem
 }
 
 .top-\[-143\.4px\] {
@@ -369,6 +385,18 @@ button {
   z-index: 3
 }
 
+.z-\[50\] {
+  z-index: 50
+}
+
+.z-\[55\] {
+  z-index: 55
+}
+
+.z-\[60\] {
+  z-index: 60
+}
+
 .float-start {
   float: inline-start
 }
@@ -411,6 +439,10 @@ button {
 
 .clear-none {
   clear: none
+}
+
+.\!m-0 {
+  margin: 0px !important
 }
 
 .\!m-\[0\] {
@@ -579,6 +611,10 @@ button {
 
 .h-16 {
   height: 4rem
+}
+
+.h-20 {
+  height: 5rem
 }
 
 .h-24 {
@@ -753,6 +789,10 @@ button {
   min-height: 545px
 }
 
+.\!w-auto {
+  width: auto !important
+}
+
 .w-3 {
   width: 0.75rem
 }
@@ -767,6 +807,10 @@ button {
 
 .w-\[108px\] {
   width: 108px
+}
+
+.w-\[110vw\] {
+  width: 110vw
 }
 
 .w-\[137\.4px\] {
@@ -969,6 +1013,11 @@ button {
   width: weird-and-invalid
 }
 
+.w-fit {
+  width: -moz-fit-content;
+  width: fit-content
+}
+
 .w-full {
   width: 100%
 }
@@ -1085,10 +1134,6 @@ button {
   max-width: 77%
 }
 
-.max-w-\[80\%\] {
-  max-width: 80%
-}
-
 .max-w-\[91px\] {
   max-width: 91px
 }
@@ -1155,6 +1200,11 @@ button {
 
 .border-separate {
   border-collapse: separate
+}
+
+.-translate-x-1\/2 {
+  --tw-translate-x: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
 }
 
 .rotate-180 {
@@ -2123,6 +2173,10 @@ button {
   border-radius: 100px
 }
 
+.rounded-\[50\%\] {
+  border-radius: 50%
+}
+
 .rounded-lg {
   border-radius: 0.5rem
 }
@@ -2357,6 +2411,26 @@ button {
   background-image: url('/public/admission-image.png')
 }
 
+.bg-\[url\(\'\/public\/formation-image-2\.png\'\)\] {
+  background-image: url('/public/formation-image-2.png')
+}
+
+.bg-\[url\(\'\/public\/formation-image-3\.png\'\)\] {
+  background-image: url('/public/formation-image-3.png')
+}
+
+.bg-\[url\(\'\/public\/formation-img-4\.png\'\)\] {
+  background-image: url('/public/formation-img-4.png')
+}
+
+.bg-\[url\(\'\/public\/formation-img-5\.png\'\)\] {
+  background-image: url('/public/formation-img-5.png')
+}
+
+.bg-\[url\(\'\/public\/formation-img-6\.png\'\)\] {
+  background-image: url('/public/formation-img-6.png')
+}
+
 .bg-\[url\(\'\/public\/hero-banner\.png\'\)\] {
   background-image: url('/public/hero-banner.png')
 }
@@ -2365,12 +2439,16 @@ button {
   background-image: url('/public/nos-formation-img-1-min.png')
 }
 
-.bg-\[url\(\'\/public\/nos-formation-img-2-min\.png\'\)\] {
-  background-image: url('/public/nos-formation-img-2-min.png')
+.bg-\[url\(\'\/public\/tags-main-image\.png\'\)\] {
+  background-image: url('/public/tags-main-image.png')
 }
 
-.bg-\[url\(\'\/public\/nos-formation-img-3-min\.png\'\)\] {
-  background-image: url('/public/nos-formation-img-3-min.png')
+.bg-\[url\(\'\/public\/formation-img-7\.png\'\)\] {
+  background-image: url('/public/formation-img-7.png')
+}
+
+.bg-\[url\(\'\/public\/formation-img-8\.png\'\)\] {
+  background-image: url('/public/formation-img-8.png')
 }
 
 .decoration-slice {
@@ -3702,6 +3780,10 @@ body {
 
   .lg\:h-\[990px\] {
     height: 990px
+  }
+
+  .lg\:max-w-\[90\%\] {
+    max-width: 90%
   }
 }
 

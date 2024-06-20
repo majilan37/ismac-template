@@ -18,8 +18,8 @@ new Swiper(".nos-formation-swiper", {
   autoplay: {
     delay: 5000,
     disableOnInteraction: false,
-    loop: true,
   },
+  loop: true,
   speed: 750,
 
   breakpoints: {
@@ -39,11 +39,40 @@ new Swiper(".nos-formation-swiper", {
   },
 });
 
+function handleSlideChange(n) {
+  return function () {
+    const endSlide = this.activeIndex === n;
+
+    console.log(this.activeIndex);
+    if (endSlide) {
+      // Disable the navigation button
+      this.navigation.nextEl.classList.add(
+        "swiper-button-disabled",
+
+        "opacity-50",
+        "cursor-not-allowed"
+      );
+      this.allowSlideNext = false;
+    } else {
+      // Enable the navigation button
+      this.navigation.nextEl.classList.remove(
+        "swiper-button-disabled",
+        "opacity-50",
+        "cursor-not-allowed"
+      );
+      this.allowSlideNext = true;
+    }
+  };
+}
+
 // --- tags ---
 new Swiper(".debouchee-tags-swiper", {
-  slidesPerView: 1,
-  spaceBetween: 20,
-
+  slidesPerView: "auto",
+  spaceBetween: 10,
+  centerSlides: true,
+  on: {
+    slideChange: handleSlideChange(9),
+  },
   breakpoints: {
     250: {
       slidesPerView: 1,
@@ -62,6 +91,9 @@ new Swiper(".debouchee-tags-swiper", {
     },
     1500: {
       slidesPerView: 4,
+      on: {
+        slideChange: handleSlideChange(8),
+      },
     },
   },
 
@@ -170,7 +202,7 @@ tagSwiperWrapper.innerHTML = `
     ${tagButtons.map((tag, index) => {
       return `
               <button
-                  class="swiper-slide  transition-all duration-200 hover:bg-linen hover:text-chocolate-200 rounded-81xl box-border flex flex-col items-center justify-center py-[5px] px-[11px] border-[3px] border-solid border-gray-900 relative tracking-[-0.02em] leading-[36px] uppercase font-medium"
+                  class="swiper-slide !w-auto transition-all duration-200 hover:bg-linen hover:text-chocolate-200 rounded-81xl box-border flex flex-col items-center justify-center py-[5px] px-[11px] border-[3px] border-solid border-gray-900 relative tracking-[-0.02em] leading-[36px] uppercase font-medium"
               >
                   ${tag.title}
               </button>
