@@ -1154,6 +1154,10 @@ button {
   max-width: 20rem
 }
 
+.max-w-\[721px\] {
+  max-width: 721px
+}
+
 .flex-1 {
   flex: 1 1 0%
 }
