@@ -11,6 +11,21 @@ menuButton.addEventListener("click", () => {
   }
 });
 
+// GSAP rotation animation for image on scroll
+document.addEventListener("DOMContentLoaded", () => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.to(".camera-a-propos", {
+    scrollTrigger: {
+      trigger: ".a-propos-institut",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true,
+    },
+    rotation: 360,
+  });
+});
+
 new Swiper(".nos-formation-swiper", {
   slidesPerView: 1,
   spaceBetween: 20,
