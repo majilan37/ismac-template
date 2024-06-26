@@ -249,12 +249,20 @@ button {
   inset: -0.25rem;
 }
 
-.bottom-0 {
-  bottom: 0px;
+.-bottom-10 {
+  bottom: -2.5rem;
 }
 
-.bottom-20 {
-  bottom: 5rem;
+.-top-0 {
+  top: -0px;
+}
+
+.-top-24 {
+  top: -6rem;
+}
+
+.bottom-0 {
+  bottom: 0px;
 }
 
 .bottom-\[10\%\] {
@@ -293,10 +301,6 @@ button {
   left: 352px;
 }
 
-.left-\[665px\] {
-  left: 665px;
-}
-
 .left-\[701px\] {
   left: 701px;
 }
@@ -315,10 +319,6 @@ button {
 
 .right-\[-15\.7px\] {
   right: -15.7px;
-}
-
-.top-20 {
-  top: 5rem;
 }
 
 .top-\[-143\.4px\] {
@@ -349,60 +349,8 @@ button {
   top: 339px;
 }
 
-.top-\[393px\] {
-  top: 393px;
-}
-
 .top-\[70px\] {
   top: 70px;
-}
-
-.-top-1\/2 {
-  top: -50%;
-}
-
-.-top-full {
-  top: -100%;
-}
-
-.top-16 {
-  top: 4rem;
-}
-
-.-top-0 {
-  top: -0px;
-}
-
-.top-10 {
-  top: 2.5rem;
-}
-
-.top-6 {
-  top: 1.5rem;
-}
-
-.top-5 {
-  top: 1.25rem;
-}
-
-.-top-5 {
-  top: -1.25rem;
-}
-
-.-top-20 {
-  top: -5rem;
-}
-
-.-bottom-10 {
-  bottom: -2.5rem;
-}
-
-.-top-24 {
-  top: -6rem;
-}
-
-.-top-16 {
-  top: -4rem;
 }
 
 .isolate {
@@ -522,8 +470,16 @@ button {
   margin-left: -7px;
 }
 
+.mt-10 {
+  margin-top: 2.5rem;
+}
+
 .mt-2 {
   margin-top: 0.5rem;
+}
+
+.mt-20 {
+  margin-top: 5rem;
 }
 
 .mt-\[-33px\] {
@@ -532,10 +488,6 @@ button {
 
 .mt-\[-6px\] {
   margin-top: -6px;
-}
-
-.mt-10 {
-  margin-top: 2.5rem;
 }
 
 .box-border {
@@ -1060,6 +1012,10 @@ button {
 
 .w-full {
   width: 100%;
+}
+
+.w-\[115vw\] {
+  width: 115vw;
 }
 
 .min-w-\[194px\] {
@@ -2881,6 +2837,10 @@ button {
   padding-top: 2.5rem;
 }
 
+.pt-20 {
+  padding-top: 5rem;
+}
+
 .pt-4 {
   padding-top: 1rem;
 }
@@ -2915,22 +2875,6 @@ button {
 
 .pt-\[78px\] {
   padding-top: 78px;
-}
-
-.pt-9 {
-  padding-top: 2.25rem;
-}
-
-.pt-20 {
-  padding-top: 5rem;
-}
-
-.pt-24 {
-  padding-top: 6rem;
-}
-
-.pt-28 {
-  padding-top: 7rem;
 }
 
 .text-left {
@@ -3917,6 +3861,11 @@ body {
     height: 775px;
   }
 
+  .xl\:px-\[100px\] {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+
   .xl\:pb-0 {
     padding-bottom: 0px;
   }
@@ -3947,6 +3896,11 @@ body {
 
   .mq1500\:gap-\[16px\] {
     gap: 16px;
+  }
+
+  .mq1500\:px-\[100px\] {
+    padding-left: 100px;
+    padding-right: 100px;
   }
 }
 
@@ -3986,6 +3940,11 @@ body {
   .mq1225\:px-\[50px\] {
     padding-left: 50px;
     padding-right: 50px;
+  }
+
+  .mq1225\:px-5 {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
 
   .mq1225\:pl-\[22px\] {
