@@ -15,15 +15,53 @@ menuButton.addEventListener("click", () => {
 document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);
 
-  gsap.to(".camera-a-propos", {
+  // Make sure sure the animation is repeated back and forth
+  const timeline = gsap.timeline({
     scrollTrigger: {
-      trigger: ".a-propos-institut",
-      start: "top bottom",
-      end: "bottom top",
-      scrub: true,
+      trigger: ".camera-a-propos",
+      start: "top bottom", // when the top of the trigger hits the bottom of the viewport
+      end: "bottom top", // when the bottom of the trigger hits the top of the viewport
+      onEnter: () => timeline.restart(), // restart timeline on enter
+      onEnterBack: () => timeline.reverse(), // play timeline backwards when scrolling back
     },
-    rotation: 360,
   });
+
+  timeline.to(".camera-a-propos", {
+    opacity: 1,
+    duration: 2,
+  });
+
+  timeline.to(".camera-a-propos", {
+    opacity: 0.2,
+    duration: 2,
+  });
+
+  // Change image src
+  timeline.to(".camera-a-propos", {
+    attr: { src: "/public/camera-a-propos-2.png" },
+    duration: 0,
+  });
+
+  timeline.to(".camera-a-propos", {
+    opacity: 1,
+    duration: 2,
+  });
+
+  timeline.to(".camera-a-propos", {
+    rotation: 360,
+    duration: 4,
+    opacity: 0.3,
+  });
+
+  // .to(".camera-a-propos", {
+  //   scrollTrigger: {
+  //     trigger: ".a-propos-institut",
+  //     start: "top bottom",
+  //     end: "bottom top",
+  //     scrub: true,
+  //   },
+  //   rotation: 360,
+  // });
 });
 
 new Swiper(".nos-formation-swiper", {
@@ -54,6 +92,35 @@ new Swiper(".nos-formation-swiper", {
   },
 });
 
+new Swiper(".images-infinite-slider", {
+  loop: true,
+
+  spaceBetween: 20,
+
+  centeredSlides: true,
+  speed: 18000,
+  autoplay: {
+    delay: 0,
+  },
+  loop: true,
+  slidesPerView: 3,
+  freeMode: true,
+
+  breakpoints: {
+    450: {
+      slidesPerView: 2,
+    },
+    768: {
+      slidesPerView: 3,
+    },
+  },
+
+  // navigation: {
+  //   nextEl: ".swiper-button-next",
+  //   prevEl: ".swiper-button-prev",
+  // },
+});
+
 function handleSlideChange(n) {
   return function () {
     const endSlide = this.activeIndex === n;
@@ -81,44 +148,44 @@ function handleSlideChange(n) {
 }
 
 // --- tags ---
-new Swiper(".debouchee-tags-swiper", {
-  slidesPerView: "auto",
-  spaceBetween: 10,
-  centerSlides: true,
-  on: {
-    slideChange: handleSlideChange(9),
-  },
-  breakpoints: {
-    250: {
-      slidesPerView: 1,
-    },
-    768: {
-      slidesPerView: 2,
-    },
-    1024: {
-      slidesPerView: 2,
-    },
-    1225: {
-      slidesPerView: 3,
-    },
-    1440: {
-      slidesPerView: 3,
-    },
-    1500: {
-      slidesPerView: 4,
-      on: {
-        slideChange: handleSlideChange(8),
-      },
-    },
-  },
+// new Swiper(".debouchee-tags-swiper", {
+//   slidesPerView: "auto",
+//   spaceBetween: 10,
+//   centerSlides: true,
+//   on: {
+//     slideChange: handleSlideChange(9),
+//   },
+//   breakpoints: {
+//     250: {
+//       slidesPerView: 1,
+//     },
+//     768: {
+//       slidesPerView: 2,
+//     },
+//     1024: {
+//       slidesPerView: 2,
+//     },
+//     1225: {
+//       slidesPerView: 3,
+//     },
+//     1440: {
+//       slidesPerView: 3,
+//     },
+//     1500: {
+//       slidesPerView: 4,
+//       on: {
+//         slideChange: handleSlideChange(8),
+//       },
+//     },
+//   },
 
-  navigation: {
-    nextEl: ".debouchee-tags-swiper-button-next",
-    prevEl: ".debouchee-tags-swiper-button-prev",
-    disabledClass:
-      "swiper-button-disabled opacity-50 cursor-not-allowed hover:bg-seashell",
-  },
-});
+//   navigation: {
+//     nextEl: ".debouchee-tags-swiper-button-next",
+//     prevEl: ".debouchee-tags-swiper-button-prev",
+//     disabledClass:
+//       "swiper-button-disabled opacity-50 cursor-not-allowed hover:bg-seashell",
+//   },
+// });
 
 // --- tags ---
 const tagButtons = [
@@ -255,7 +322,7 @@ tagSwiperWrapper.innerHTML = `
     ${tagButtons.map((tag, index) => {
       return `
               <button
-                  class="swiper-slide !w-auto transition-all duration-200 hover:bg-linen hover:text-chocolate-200 rounded-81xl box-border flex flex-col items-center justify-center py-[5px] px-[11px] border-[3px] border-solid border-gray-900 relative tracking-[-0.02em] leading-[36px] uppercase font-medium"
+                  class="!w-fit whitespace-nowrap transition-all duration-200 hover:bg-linen hover:text-chocolate-200 rounded-81xl box-border flex flex-col items-center justify-center py-[5px] px-[11px] border-[3px] border-solid border-gray-900 relative tracking-[-0.02em] leading-[36px] uppercase font-medium"
               >
                   ${tag.title}
               </button>

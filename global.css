@@ -32,3 +32,40 @@ body {
     @apply bg-transparent border-none cursor-pointer text-inherit;
   }
 }
+
+.images-infinite-slider::before {
+  content: "";
+  position: absolute;
+  top: -70px;
+  left: -10%;
+  width: 120%;
+  height: 100px;
+  background: #f8f2ee;
+  border-radius: 100%;
+  z-index: 100;
+}
+
+.images-infinite-slider::after {
+  content: "";
+  position: absolute;
+  bottom: -60px;
+  left: -10%;
+  width: 120%;
+  height: 100px;
+  background: #f8f2ee;
+  border-radius: 100%;
+  z-index: 1000;
+}
+
+.spining-shape:before {
+  width: 100%;
+  content: " ";
+  background-image: url(/public/frame-88@2x.png);
+  position: absolute;
+  top: -122px;
+  height: 500px;
+  z-index: 100;
+  background-repeat: no-repeat;
+  background-size: contain;
+  left: 40%;
+}
